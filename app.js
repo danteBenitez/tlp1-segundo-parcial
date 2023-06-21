@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 require('dotenv').config();
 const path = require('path');
-
+const { sequelize } = require('./database.js');
 const app = express();
 
 // Middlewares
@@ -27,6 +27,8 @@ app.use(function(_req, res, _next) {
     res.status(404).render('404');
 })
 
-
 // Starting the server
-app.listen(process.env.PORT, () => console.log(`Server on port ${process.env.PORT}`));
+app.listen(process.env.PORT, () => {
+    console.log(`Server on port ${process.env.PORT}`);
+    sequelize.sync({ force: true});
+});

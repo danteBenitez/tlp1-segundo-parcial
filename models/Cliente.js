@@ -1,22 +1,22 @@
-const sequelize = require('sequelize');
+const { DataTypes, sequelize } = require('../database.js');
 
 const Cliente = sequelize.define('Cliente', {
     id: {
-        type: sequelize.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     apellido: {
-        type: sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     nombre: {
-        type: sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     correo_electronico: {
-        type: sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     } 
 },{

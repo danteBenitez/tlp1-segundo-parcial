@@ -1,24 +1,24 @@
 // TODO: Crear modelo de datos de Reserva
-const sequelize = require('sequelize');
-const { DataType } = sequelize
+const sequelize = require('../database.js');
+const { DataTypes } = sequelize;
 
 const Reserva = sequelize.define('Reserva', {
     id: {
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
     codigo_reserva: {
-        type: DataType.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     fecha_reserva: {
-        type: DataType.DATEONLY,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     id_cliente: {
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'Cliente',
