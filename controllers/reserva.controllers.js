@@ -1,6 +1,5 @@
 const ctrlReservas = {};
 const Reservas = require('../models/Reserva');
-
 // ==========================================
 //         Rutas para CRUD de reservas
 // ==========================================
@@ -75,6 +74,7 @@ ctrlReservas.crearReserva = async (req, res) => {
 
         return res.json(reservaCreada);
     } catch (error) {
+        console.error(error);
         return res.status(error.status || 500).json(error.message || 'Error interno del servidor');
     }
 }

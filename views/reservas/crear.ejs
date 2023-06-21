@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="/" id="btnRegresar" class="btn btn-sm btn-primary mb-3">Regresar</a>
+
+                </div>
+            </div>
+            <div class="mx-auto col-sm-9 col-md-6 col-lg-5 col-xl-4">
+                <form action="#" id="nueva-reserva" class="rounded border p-3">
+                    <h3 class="mb-3 text-center bg-primary text-light rounded p-2">Nueva Reserva</h3>
+                    <div class="mb-3">
+                        <label for="codigo" class="form-label">Ingrese el código de su reserva: </label>
+                        <input type="text" name="codigo" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Ingrese la fecha de su reserva: </label>
+                        <input type="date" name="fecha" class="form-control">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Ingrese su apellido: </label>
+                        <input type="text" name="apellido" >
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Ingrese su nombre: </label>
+                        <input type="text" name="nombre">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Ingrese su correo electrónico: </label>
+                        <input type="email" name="email">
+                    </div>
+        
+                    <button type="submit" class="btn btn-primary">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="/js/crear-reserva.js"></script>
+
+<%- include('../partials/footer') %>

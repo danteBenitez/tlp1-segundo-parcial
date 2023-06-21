@@ -34,3 +34,5 @@ const Reserva = sequelize.define('Reserva', {
     paranoid: true,
     tableName: 'reservas'
 })
+
+module.exports = Reserva;
