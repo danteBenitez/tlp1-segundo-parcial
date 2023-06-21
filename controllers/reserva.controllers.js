@@ -119,7 +119,6 @@ ctrlReservas.actualizarReserva = async (req, res) => {
     }
 }
 
-
 // Eliminar una reserva de forma lógica
 ctrlReservas.eliminarReserva = async (req, res) => {
     const { id } = req.params;
@@ -144,4 +143,23 @@ ctrlReservas.eliminarReserva = async (req, res) => {
         return res.status(error.status || 500).json(error.message || 'Error interno del servidor');
     }
 }
+
+// ==========================================
+//         Rutas para VISTAS de reservas
+// ==========================================
+
+ctrlReservas.renderizarIndex = function(req, res) {
+    res.render('index.ejs');
+}
+
+ctrlReservas.renderizarActualizarReserva = function(req, res) {
+    res.render('reservas/actualizar.ejs', {
+        id: req.params.id
+    });
+}
+
+ctrlReservas.renderizarCrearReserva = function(req, res) {
+    res.render('reservas/crear.ejs');
+}
+
 module.exports = ctrlReservas;

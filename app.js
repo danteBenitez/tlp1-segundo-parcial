@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 // Routes
-app.use('/api', require('./routes/reserva.routes'));
+app.use('/reservas/', require('./routes/reserva.routes'));
 
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 app.use(function(_req, res, _next) {
@@ -30,5 +30,4 @@ app.use(function(_req, res, _next) {
 // Starting the server
 app.listen(process.env.PORT, () => {
     console.log(`Server on port ${process.env.PORT}`);
-    sequelize.sync({ force: true});
 });
