@@ -17,14 +17,18 @@ const Reserva = sequelize.define('Reserva', {
         type: DataTypes.DATEONLY,
         allowNull: false
     },
-    id_cliente: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'Cliente',
-            key: 'id'
-        }
-    }
+    apellido_autor: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    nombre_autor: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    correo_electronico_autor: {
+        type: DataTypes.STRING,
+        allowNull: false
+    } 
 }, {
     timestamps: true, // Almacenar datos sobre la creación y actualización de registros
     /* Almacenar datos sobre la eliminación de registros de forma lógica. Permitiendo soft delete */
